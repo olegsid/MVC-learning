@@ -3,14 +3,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: './src/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -19,18 +20,23 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      },
+      {
+        test: /\.(woff2?|jpe?g|png|gif|ico)$/,
+        use: 'file-loader?name=./assets/images/[name].[ext]'
       }
     ]
   },
-  plugins: [ 
-    new ExtractTextPlugin(
-      {filename: 'style.css', disable: false, allChunks: true}
-    ),
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      disable: false,
+      allChunks: true
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
