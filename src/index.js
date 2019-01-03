@@ -1,2 +1,2 @@
-import "./scss/style.scss";
+import "./stylesheets/main.scss";
 console.log('111111')

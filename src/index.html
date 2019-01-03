@@ -1,9 +1,33 @@
 <html>
   <head>
-    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
+    />
   </head>
+
   <body>
-    <div>Hello, world!</div>
+    <div class="main-wrapper">
+      <section class="view catagories-view">
+        <header class="view__heading-wrapper">
+          <h1 class="view__heading-text"></h1>
+        </header>
+        <div class="view__content">
+          <ul class="categories-list">
+            <li class="categories-list__item category-card">
+              <img class="category-card__poster" src="" alt="" />
+              <div class="category-card__title-container">
+                <p class="category-card__title-text"></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="view goods-view" style="display: none"></section>
+      <section class="view cart-view" style="display: none"></section>
+
+    </div>
+
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>
