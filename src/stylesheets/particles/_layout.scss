@@ -7,57 +7,90 @@
     max-width: 1240px;
     margin: auto;
 
-    &__heading-wrapper {}
+    &__heading-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 35px 0 40px;
+    }
 
     &__heading-text {
-        // color:black;
-        font-family: "Segoe UI";
-        font-weight: 300;
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-family: $mainFont;
+        font-weight: 400;
+        font-size: 40px;
 
     }
 
     &__cart {}
 }
 
-.list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.shopping-cart {
+    width: 280px;
+    height: 60px;
+    background-color: #d9644a;
+    display: flex;
+    justify-content: space-between;
+
+    &__icon {
+        margin: auto auto auto 20px ;
+        width: 34px;
+        height: 31px;
+        background-image: url(../../assets/images/cart-icon.png);
+    }
+
+    &__summary{
+        margin: auto 30px auto auto;
+        color: white;
+        font-family: $mainFont;
+        font-weight: 400;
+        font-size: 24px;
+    }
 }
-.categories-list{
+
+.categories-list {
     height: 700px;
     width: 1320px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, min-content));
     grid-template-rows: 180px 180px 180px;
-    grid-gap: 10px;
     grid-auto-flow: column dense;
+    grid-gap: 10px;
 
-    &__item{
+    &__item {
         display: block;
     }
 
-    &__item--1x2{
+    &__item--1x2 {
         grid-row-end: span 2
     }
 
-    &__item--2x1{
+    &__item--2x1 {
         grid-column-end: span 2;
     }
 }
 
-.category-card{
+.category-card {
     position: relative;
 
-    &__poster{
+    &__poster {}
 
-    }
-    &__title-container{}
-
-    &__title-text{
+    &__title-container {
         position: absolute;
         bottom: 0;
         left: 0;
+        height: 40px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 14px 20px 11px;
+    }
 
+    &__title-text {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        line-height: 15px;
+        font-family: $mainFont;
+        font-weight: 400;
     }
 }
